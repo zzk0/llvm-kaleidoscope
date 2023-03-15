@@ -6,3 +6,7 @@
 /llvm
 .vscode
 main
+
+build
+compile_commands.json
+main
