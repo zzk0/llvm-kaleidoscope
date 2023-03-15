@@ -1,6 +1,24 @@
 # Kaleidoscope: Implementing a Language with LLVM
 
 ## How to build it
+
+On Linux
+
+```
+# build && run docker
+cd docker
+docker build .
+docker run -it --rm --runtime=nvidia --network=host -v $(pwd):$(pwd) -w $(pwd) --privileged --cap-add sys_ptrace --security-opt seccomp=unconfined --shm-size="16g" images-hash bash
+
+# build && run project
+cd ..
+mkdir build
+cd build
+cmake ..
+make -j8
+./kaleidoscope
+```
+
 On MacOS (tested on Ventura 13.0).
 ~~~
 # Install llvm (version 15.0)
